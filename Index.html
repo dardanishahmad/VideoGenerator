@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>VisionAI — AI Video Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">V</div>
+            <span>Vision<span class="purple">AI</span></span>
+        </div>
+
+        <div class="nav-right">
+            <span class="credits">
+                30 sec video
+            </span>
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+
+            <div class="badge">
+                ✦ AI VIDEO GENERATOR
+            </div>
+
+            <h1>
+                Turn your ideas into
+                <span>AI videos.</span>
+            </h1>
+
+            <p class="subtitle">
+                Describe your video. Our AI creates a
+                polished 30-second video from your prompt.
+            </p>
+
+        </section>
+
+
+        <section class="generator-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>Create a video</h2>
+
+                    <p>
+                        Describe exactly what you want to see.
+                    </p>
+                </div>
+
+                <div class="duration">
+                    <span>⏱</span>
+                    30 SEC
+                </div>
+
+            </div>
+
+
+            <div class="prompt-wrapper">
+
+                <textarea
+                    id="prompt"
+                    maxlength="5000"
+                    placeholder="Example: A cinematic drone shot flying over a futuristic city at sunset, neon lights turning on as the camera moves between skyscrapers..."
+                ></textarea>
+
+                <div class="prompt-bottom">
+
+                    <span id="characterCount">
+                        0 / 5000
+                    </span>
+
+                    <button
+                        id="clearPrompt"
+                        class="clear-button"
+                        type="button"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="options">
+
+                <div class="option">
+
+                    <label for="orientation">
+                        Aspect ratio
+                    </label>
+
+                    <select id="orientation">
+
+                        <option value="portrait">
+                            9:16 — Shorts / Reels / TikTok
+                        </option>
+
+                        <option value="landscape">
+                            16:9 — YouTube
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="option">
+
+                    <label>
+                        Duration
+                    </label>
+
+                    <div class="fixed-duration">
+                        30 seconds
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="generateButton"
+                class="generate-button"
+                type="button"
+            >
+
+                <span class="button-icon">✦</span>
+
+                <span id="buttonText">
+                    Generate 30-second video
+                </span>
+
+            </button>
+
+
+            <div
+                id="errorBox"
+                class="error-box hidden"
+            ></div>
+
+
+            <div
+                id="loadingBox"
+                class="loading-box hidden"
+            >
+
+                <div class="spinner"></div>
+
+                <div class="loading-content">
+
+                    <strong>
+                        Creating your video...
+                    </strong>
+
+                    <span id="statusText">
+                        AI is working on your prompt
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section
+            id="resultSection"
+            class="result-section hidden"
+        >
+
+            <div class="result-header">
+
+                <div>
+
+                    <span class="result-label">
+                        YOUR VIDEO
+                    </span>
+
+                    <h2>
+                        Generation complete
+                    </h2>
+
+                </div>
+
+                <span class="success-badge">
+                    ✓ READY
+                </span>
+
+            </div>
+
+
+            <div class="video-container">
+
+                <video
+                    id="videoPlayer"
+                    controls
+                    playsinline
+                ></video>
+
+            </div>
+
+
+            <div class="video-actions">
+
+                <a
+                    id="downloadButton"
+                    class="download-button"
+                    download="ai-video.mp4"
+                    target="_blank"
+                >
+                    ↓ Download video
+                </a>
+
+                <button
+                    id="newVideoButton"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Create another
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="tips">
+
+            <div class="tip">
+                <span>01</span>
+                <div>
+                    <strong>Describe the scene</strong>
+                    <p>
+                        Mention the subject, location and action.
+                    </p>
+                </div>
+            </div>
+
+            <div class="tip">
+                <span>02</span>
+                <div>
+                    <strong>Add a visual style</strong>
+                    <p>
+                        Try cinematic, realistic, anime or documentary.
+                    </p>
+                </div>
+            </div>
+
+            <div class="tip">
+                <span>03</span>
+                <div>
+                    <strong>Describe the camera</strong>
+                    <p>
+                        Try drone shot, close-up or tracking shot.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        Built with HTML, CSS, JavaScript & Node.js
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
